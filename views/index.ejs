@@ -1,0 +1,23 @@
+<div class="author">
+    <hi class="author_heading">Hi, I am Sidd</hi>
+    <p class="author_body">IITG Student</p>
+</div>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD0H7X2vBwxU6gNEPRN_heBuAz93eP8VlYAA&s" alt="alone boy" class="hero.image" width="701" >
+<section class="article">
+    <h2 class="article_heading">Latest Post</h2>
+    <ul class="article_ul">
+        <% data.forEach(post => { %>
+         <li>
+            <a href="/post/<%= post._id %>">
+                <span><%= post.title %></span>
+                <span class="article.list_date"><% post.createdAt.toDateString() %></span>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+    <% if (nextPage!==null) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt;View Older Posts</a>
+    <% } %>
+     
+    
+</section>
